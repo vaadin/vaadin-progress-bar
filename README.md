@@ -20,9 +20,7 @@
 ```
 -->
 ```html
-<vaadin-progress-bar>
-  ...
-</vaadin-progress-bar>
+<vaadin-progress-bar></vaadin-progress-bar>
 ```
 
 [<img src="https://raw.githubusercontent.com/vaadin/vaadin-progress-bar/fix/2/screenshot.png" width="200" alt="Screenshot of vaadin-progress-bar">](https://vaadin.com/elements/-/element/vaadin-progress-bar)
