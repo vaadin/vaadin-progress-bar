@@ -23,6 +23,10 @@ This program is available under Apache License Version 2.0, available at https:/
         position: relative;
       }
 
+      :host([hidden]) {
+        display: none !important;
+      }
+
       #background {
         background: var(--vaadin-progress-background-color);
         height: 100%;
