@@ -32,8 +32,7 @@
   "devDependencies": {
     "iron-component-page": "^3.0.0",
     "iron-demo-helpers": "^2.0.0",
-    "vaadin-button": "vaadin/vaadin-button#p3-preview",
-    "web-component-tester": "^6.1.5",
-    "vaadin-demo-helpers": "vaadin/vaadin-demo-helpers#p3-preview"
+    "vaadin-demo-helpers": "vaadin/vaadin-demo-helpers#p3-preview",
+    "web-component-tester": "^6.1.5"
   }
 }
