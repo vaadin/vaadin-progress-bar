@@ -17,8 +17,8 @@
 > ⚠️ This is a pre-release version built with [`LitElement`](https://github.com/Polymer/lit-element), part of the [next generation of Vaadin web components](https://vaadin.com/blog/next-generation-vaadin-components).
 >
 > Looking for Vaadin 14 compatible version? Please see the following branch:
-> - [1.2 branch](https://github.com/vaadin/vaadin-progress-bar/commits/1.2) (14.3 (RTL))
 > - [1.1 branch](https://github.com/vaadin/vaadin-progress-bar/commits/1.1) (latest stable)
+> - [1.2 branch](https://github.com/vaadin/vaadin-progress-bar/commits/1.2) (next minor version with incremental improvements)
 
 ```html
 <vaadin-progress-bar></vaadin-progress-bar>
@@ -67,7 +67,7 @@ To use the Material theme, import the correspondent file from the `theme/materia
 
 1. Fork the `vaadin-progress-bar` repository and clone it locally.
 
-1. 1. Make sure you have [npm](https://www.npmjs.com/) installed.
+1. Make sure you have [npm](https://www.npmjs.com/) installed.
 
 1. When in the `vaadin-progress-bar` directory, run `npm install` to install dependencies.
 
@@ -77,6 +77,7 @@ To use the Material theme, import the correspondent file from the `theme/materia
 ## Running tests from the command line
 
 - When in the `vaadin-progress-bar` directory, run `npm test`
+
 - To debug tests in the browser, run `npm run test:debug`
 
 ## Following the coding style
@@ -91,7 +92,7 @@ Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs](https
 
 ## Contributing
 
-  To contribute to the component, please read [the guideline](https://github.com/vaadin/vaadin-core/blob/master/CONTRIBUTING.md) first.
+To contribute to the component, please read [the guideline](https://github.com/vaadin/vaadin-core/blob/master/CONTRIBUTING.md) first.
 
 
 ## License
