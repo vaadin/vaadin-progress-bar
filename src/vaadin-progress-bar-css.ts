@@ -22,7 +22,6 @@ export const progressBarStyles = css`
   }
 
   /* RTL specific styles */
-
   :host([dir='rtl']) [part='value'] {
     transform-origin: 100% 50%;
   }
