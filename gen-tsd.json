@@ -1,0 +1,9 @@
+{
+  "excludeFiles": [
+    "index.html",
+    "wct.conf.js",
+    "demo/**/*",
+    "theme/**/*",
+    "test/**/*"
+  ]
+}
