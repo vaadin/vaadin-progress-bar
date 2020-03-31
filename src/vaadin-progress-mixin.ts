@@ -22,7 +22,8 @@ export const ProgressMixin = <T extends Constructor<LitElement>>(base: T): T & C
     @property({ type: Boolean, reflect: true })
     indeterminate = false;
 
-    protected firstUpdated() {
+    protected firstUpdated(props: PropertyValues) {
+      super.firstUpdated(props);
       this.setAttribute('role', 'progressbar');
     }
 
@@ -31,47 +32,47 @@ export const ProgressMixin = <T extends Constructor<LitElement>>(base: T): T & C
 
       const minChanged = props.has('min');
       if (minChanged) {
-        this.min && this._minChanged(this.min);
+        this._minChanged(this.min);
       }
 
       const maxChanged = props.has('max');
       if (maxChanged) {
-        this.max && this._maxChanged(this.max);
+        this._maxChanged(this.max);
       }
 
       const valueChanged = props.has('value');
       if (valueChanged) {
-        this.value && this._valueChanged(this.value);
+        this._valueChanged(this.value);
       }
 
       if (valueChanged || minChanged || maxChanged) {
-        this.value && this.min && this.max && this._normalizedValueChanged(this.value, this.min, this.max);
+        this._normalizedValueChanged(this.value, this.min, this.max);
       }
     }
 
-    private _normalizedValueChanged(value: number, min: number, max: number) {
+    private _normalizedValueChanged(value: number | null | undefined, min: number, max: number) {
       const newValue = this._normalizeValue(value, min, max);
       const prop = '--vaadin-progress-value';
 
       this.style.setProperty(prop, newValue.toString());
     }
 
-    private _valueChanged(value: number) {
-      this.setAttribute('aria-valuenow', value.toString());
+    private _valueChanged(value: number | null | undefined) {
+      this.setAttribute('aria-valuenow', String(value));
     }
 
     private _minChanged(value: number) {
-      this.setAttribute('aria-valuemin', value.toString());
+      this.setAttribute('aria-valuemin', String(value));
     }
 
     private _maxChanged(value: number) {
-      this.setAttribute('aria-valuemax', value.toString());
+      this.setAttribute('aria-valuemax', String(value));
     }
 
     /**
      * Percent of current progress relative to whole progress bar (max - min)
      */
-    private _normalizeValue(value: number, min: number, max: number): number {
+    private _normalizeValue(value: number | null | undefined, min: number, max: number): number {
       let nV;
 
       if (!value && value !== 0) {
