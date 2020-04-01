@@ -1,28 +1,41 @@
 <!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Progress bar rtl tests</title>
+    <script>
+      document.documentElement.setAttribute('dir', 'rtl');
 
-<head lang="en">
-  <meta charset="UTF-8">
-  <title></title>
-  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-  <script>
-    const theme = window.location.search.replace(/.*theme=(\w+).*/, '$1') || 'lumo';
-    document.write(`<link rel="import" href="../../theme/${theme}/vaadin-progress-bar.html">`);
-    document.documentElement.setAttribute('dir', 'rtl');
-
-    window.addEventListener('WebComponentsReady', function() {
-      customElements.whenDefined('vaadin-progress-bar').then(function() {
-        window.ShadyDOM && window.ShadyDOM.flush(); // Force DOM composition
-        window.webComponentsAreReady = true; // Checked in gemini before capture callback
+      window.addEventListener('WebComponentsReady', function() {
+        customElements.whenDefined('vaadin-progress-bar').then(function() {
+          window.ShadyDOM && window.ShadyDOM.flush(); // Force DOM composition
+          window.webComponentsAreReady = true; // Checked in gemini before capture callback
+        });
       });
-    });
-  </script>
-</head>
+    </script>
+  </head>
+  
+  <body>
+  
+    <span id="rtl-tests">
+      <vaadin-progress-bar value="0.1">
+      </vaadin-progress-bar>
+    </span>
+  
+    <script type="module">
+      (async() => {
+        const progressBar = document.querySelector('vaadin-progress-bar');
+        const theme = window.location.search.replace(/.*theme=(\w+).*/, '$1') || 'lumo';
+  
+        await import('../../theme/' + theme + '/vaadin-progress-bar.html');
+  
+        await progressBar.updateComplete;
+  
+        window.requestAnimationFrame(() => {
+          window.webComponentsAreReady = true;
+        });
+      })();
+    </script>
+  </body>
+</html>
 
-<body>
-
-  <span id="rtl-tests">
-    <vaadin-progress-bar value="0.1">
-    </vaadin-progress-bar>
-  </span>
-
-</body>
