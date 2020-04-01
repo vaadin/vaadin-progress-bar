@@ -33,7 +33,7 @@ describe('progress-bar', () => {
 
   function getProgressValue(element: VaadinProgressBar) {
     const prop = '--vaadin-progress-value';
-    window.getComputedStyle(element).getPropertyValue(prop);
+    return window.getComputedStyle(element).getPropertyValue(prop);
   }
 
   describe('properties', () => {
