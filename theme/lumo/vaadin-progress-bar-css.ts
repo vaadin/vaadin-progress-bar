@@ -271,3 +271,17 @@ export const progressBarStyles = css`
     );
   }
 `;
+
+const style = document.createElement('style');
+style.textContent = `
+@keyframes vaadin-progress-pulse3 {
+  0% { opacity: 1; }
+  10% { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 1; }
+  50.1% { opacity: 1; }
+  60% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 1; }
+}`;
+document.head.appendChild(style);
