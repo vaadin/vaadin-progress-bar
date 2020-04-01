@@ -44,7 +44,7 @@ describe('progress-bar', () => {
       value = progress.renderRoot.querySelector('[part="value"]') as HTMLElement;
     });
 
-    it('should have proper scale', async () => {
+    it('should have proper scale depending on value property', async () => {
       progress.value = 0.1;
       await progress.updateComplete;
       expect(value.getBoundingClientRect().width / progress.offsetWidth).to.be.closeTo(0.1, 0.002);
@@ -97,6 +97,18 @@ describe('progress-bar', () => {
       expect(getProgressValue(progress)).to.be.equal('1');
     });
 
+    it('should reflect indeterminate property to attribute', async () => {
+      progress.indeterminate = true;
+      await progress.updateComplete;
+      expect(progress.hasAttribute('indeterminate')).to.be.true;
+    });
+  });
+
+  describe('ARIA', () => {
+    it('should have proper role', () => {
+      expect(progress.getAttribute('role')).to.eq('progressbar');
+    });
+
     it('should set proper aria-valuenow on value change', async () => {
       progress.max = 100;
       progress.value = 50;
@@ -116,12 +128,6 @@ describe('progress-bar', () => {
       progress.min = 10;
       await progress.updateComplete;
       expect(progress.getAttribute('aria-valuemax')).to.equal('100');
-    });
-
-    it('should set indeterminate attribute', async () => {
-      progress.indeterminate = true;
-      await progress.updateComplete;
-      expect(progress.hasAttribute('indeterminate')).to.be.true;
     });
   });
 
