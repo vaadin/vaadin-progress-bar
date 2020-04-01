@@ -3,8 +3,11 @@ import { LitElement, property, PropertyValues } from 'lit-element';
 
 export interface ProgressMixinInterface {
   value: number | null | undefined;
+
   min: number;
+
   max: number;
+
   indeterminate: boolean;
 }
 
@@ -24,6 +27,7 @@ export const ProgressMixin = <T extends Constructor<LitElement>>(base: T): T & C
 
     protected firstUpdated(props: PropertyValues) {
       super.firstUpdated(props);
+
       this.setAttribute('role', 'progressbar');
     }
 
@@ -52,21 +56,19 @@ export const ProgressMixin = <T extends Constructor<LitElement>>(base: T): T & C
 
     private _normalizedValueChanged(value: number | null | undefined, min: number, max: number) {
       const newValue = this._normalizeValue(value, min, max);
-      const prop = '--vaadin-progress-value';
-
-      this.style.setProperty(prop, newValue.toString());
+      this.style.setProperty('--vaadin-progress-value', String(newValue));
     }
 
     private _valueChanged(value: number | null | undefined) {
       this.setAttribute('aria-valuenow', String(value));
     }
 
-    private _minChanged(value: number) {
-      this.setAttribute('aria-valuemin', String(value));
+    private _minChanged(min: number) {
+      this.setAttribute('aria-valuemin', String(min));
     }
 
-    private _maxChanged(value: number) {
-      this.setAttribute('aria-valuemax', String(value));
+    private _maxChanged(max: number) {
+      this.setAttribute('aria-valuemax', String(max));
     }
 
     /**

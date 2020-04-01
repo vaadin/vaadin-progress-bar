@@ -3,8 +3,6 @@ import { VaadinProgressBar } from '../../src/vaadin-progress-bar';
 
 describe('progress-bar', () => {
   let progress: VaadinProgressBar;
-  let value: HTMLElement;
-  let tagName: string;
 
   beforeEach(async () => {
     progress = await fixture(
@@ -12,11 +10,15 @@ describe('progress-bar', () => {
         <vaadin-progress-bar></vaadin-progress-bar>
       `
     );
-    value = progress.renderRoot.querySelector('[part="value"]') as HTMLElement;
-    tagName = progress.tagName.toLowerCase();
   });
 
   describe('custom element definition', () => {
+    let tagName: string;
+
+    beforeEach(() => {
+      tagName = progress.tagName.toLowerCase();
+    });
+
     it('should be defined in custom element registry', () => {
       expect(customElements.get(tagName)).to.be.ok;
       expect(progress instanceof VaadinProgressBar).to.be.ok;
@@ -31,12 +33,17 @@ describe('progress-bar', () => {
     });
   });
 
-  function getProgressValue(element: VaadinProgressBar) {
-    const prop = '--vaadin-progress-value';
-    return window.getComputedStyle(element).getPropertyValue(prop);
-  }
-
   describe('properties', () => {
+    let value: HTMLElement;
+
+    function getProgressValue(element: VaadinProgressBar) {
+      return window.getComputedStyle(element).getPropertyValue('--vaadin-progress-value');
+    }
+
+    beforeEach(() => {
+      value = progress.renderRoot.querySelector('[part="value"]') as HTMLElement;
+    });
+
     it('should have proper scale', async () => {
       progress.value = 0.1;
       await progress.updateComplete;
@@ -117,6 +124,12 @@ describe('progress-bar', () => {
       expect(progress.hasAttribute('indeterminate')).to.be.true;
     });
   });
+
+  describe('a11y', () => {
+    it('should pass accessibility test', async () => {
+      await expect(progress).to.be.accessible();
+    });
+  });
 });
 
 describe('progress-bar in column flex layout', () => {
@@ -138,21 +151,5 @@ describe('progress-bar in column flex layout', () => {
 
   it('should not collapse', () => {
     expect(progress.offsetWidth).to.be.above(100);
-  });
-});
-
-describe('a11y', () => {
-  let progress: VaadinProgressBar;
-
-  beforeEach(async () => {
-    progress = await fixture(
-      html`
-        <vaadin-progress-bar></vaadin-progress-bar>
-      `
-    );
-  });
-
-  it('should pass accessibility test', async () => {
-    await expect(progress).to.be.accessible();
   });
 });
