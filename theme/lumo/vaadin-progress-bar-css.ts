@@ -25,19 +25,10 @@ export const progressBarStyles = css`
     transition: 0.1s width linear;
   }
 
-  /* Indeterminate mode */
-
+  /* prettier-ignore */
   :host([indeterminate]) [part='value'] {
-    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(
-      to right,
-      var(--lumo-primary-color-10pct) 10%,
-      var(--lumo-primary-color)
-    );
-    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(
-      to left,
-      var(--lumo-primary-color-10pct) 10%,
-      var(--lumo-primary-color)
-    );
+    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(to right, var(--lumo-primary-color-10pct) 10%, var(--lumo-primary-color));
+    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(to left, var(--lumo-primary-color-10pct) 10%, var(--lumo-primary-color));
     width: 100%;
     background-color: transparent !important;
     background-image: var(--lumo-progress-indeterminate-progress-bar-background);
@@ -125,70 +116,34 @@ export const progressBarStyles = css`
     }
   }
 
-  /* Contrast color */
-
+  /* prettier-ignore */
   :host([theme~='contrast']) [part='value'],
   :host([theme~='contrast']) [part='value']::before {
     background-color: var(--lumo-contrast-80pct);
-    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(
-      to right,
-      var(--lumo-contrast-5pct) 10%,
-      var(--lumo-contrast-80pct)
-    );
-    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(
-      to left,
-      var(--lumo-contrast-5pct) 10%,
-      var(--lumo-contrast-60pct)
-    );
+    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(to right, var(--lumo-contrast-5pct) 10%, var(--lumo-contrast-80pct));
+    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(to left, var(--lumo-contrast-5pct) 10%, var(--lumo-contrast-60pct));
   }
 
-  /* Error color */
-
+  /* prettier-ignore */
   :host([theme~='error']) [part='value'],
   :host([theme~='error']) [part='value']::before {
     background-color: var(--lumo-error-color);
-    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(
-      to right,
-      var(--lumo-error-color-10pct) 10%,
-      var(--lumo-error-color)
-    );
-    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(
-      to left,
-      var(--lumo-error-color-10pct) 10%,
-      var(--lumo-error-color)
-    );
+    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(to right, var(--lumo-error-color-10pct) 10%, var(--lumo-error-color));
+    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(to left, var(--lumo-error-color-10pct) 10%, var(--lumo-error-color));
   }
 
-  /* Primary color */
-
+  /* prettier-ignore */
   :host([theme~='success']) [part='value'],
   :host([theme~='success']) [part='value']::before {
     background-color: var(--lumo-success-color);
-    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(
-      to right,
-      var(--lumo-success-color-10pct) 10%,
-      var(--lumo-success-color)
-    );
-    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(
-      to left,
-      var(--lumo-success-color-10pct) 10%,
-      var(--lumo-success-color)
-    );
+    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(to right, var(--lumo-success-color-10pct) 10%, var(--lumo-success-color));
+    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(to left, var(--lumo-success-color-10pct) 10%, var(--lumo-success-color));
   }
 
-  /* RTL specific styles */
-
+  /* prettier-ignore */
   :host([indeterminate][dir='rtl']) [part='value'] {
-    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(
-      to left,
-      var(--lumo-primary-color-10pct) 10%,
-      var(--lumo-primary-color)
-    );
-    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(
-      to right,
-      var(--lumo-primary-color-10pct) 10%,
-      var(--lumo-primary-color)
-    );
+    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(to left, var(--lumo-primary-color-10pct) 10%, var(--lumo-primary-color));
+    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(to right, var(--lumo-primary-color-10pct) 10%, var(--lumo-primary-color));
     animation: vaadin-progress-indeterminate-rtl 1.6s infinite cubic-bezier(0.355, 0.045, 0.645, 1);
   }
 
@@ -230,52 +185,25 @@ export const progressBarStyles = css`
     }
   }
 
-  /* Contrast color */
-
+  /* prettier-ignore */
   :host([theme~='contrast'][dir='rtl']) [part='value'],
   :host([theme~='contrast'][dir='rtl']) [part='value']::before {
-    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(
-      to left,
-      var(--lumo-contrast-5pct) 10%,
-      var(--lumo-contrast-80pct)
-    );
-    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(
-      to right,
-      var(--lumo-contrast-5pct) 10%,
-      var(--lumo-contrast-60pct)
-    );
+    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(to left, var(--lumo-contrast-5pct) 10%, var(--lumo-contrast-80pct));
+    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(to right, var(--lumo-contrast-5pct) 10%, var(--lumo-contrast-60pct));
   }
 
-  /* Error color */
-
+  /* prettier-ignore */
   :host([theme~='error'][dir='rtl']) [part='value'],
   :host([theme~='error'][dir='rtl']) [part='value']::before {
-    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(
-      to left,
-      var(--lumo-error-color-10pct) 10%,
-      var(--lumo-error-color)
-    );
-    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(
-      to right,
-      var(--lumo-error-color-10pct) 10%,
-      var(--lumo-error-color)
-    );
+    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(to left, var(--lumo-error-color-10pct) 10%, var(--lumo-error-color));
+    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(to right, var(--lumo-error-color-10pct) 10%, var(--lumo-error-color));
   }
 
-  /* Primary color */
-
+  /* prettier-ignore */
   :host([theme~='success'][dir='rtl']) [part='value'],
   :host([theme~='success'][dir='rtl']) [part='value']::before {
-    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(
-      to left,
-      var(--lumo-success-color-10pct) 10%,
-      var(--lumo-success-color)
-    );
-    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(
-      to right,
-      var(--lumo-success-color-10pct) 10%,
-      var(--lumo-success-color)
-    );
+    --lumo-progress-indeterminate-progress-bar-background: linear-gradient(to left, var(--lumo-success-color-10pct) 10%, var(--lumo-success-color));
+    --lumo-progress-indeterminate-progress-bar-background-reverse: linear-gradient(to right, var(--lumo-success-color-10pct) 10%, var(--lumo-success-color));
   }
 `;
 
