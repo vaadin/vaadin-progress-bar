@@ -12,14 +12,20 @@ gemini.suite('vaadin-progress-bar', rootSuite => {
       suite
         .setUrl(`default.html?theme=${theme}`)
         .setCaptureElements('#default-tests')
-        .capture('vaadin-progress-bar');
+        .capture('vaadin-progress-bar')
+        .capture('default')
+        .capture('rtl', actions => {
+          actions.executeJS(window => {
+            window.document.documentElement.setAttribute('dir', 'rtl');
+          });
+        });
     });
+  });
 
-    gemini.suite(`default-rtl-${theme}`, suite => {
-      suite
-        .setUrl(`rtl.html?theme=${theme}`)
-        .setCaptureElements('#rtl-tests')
-        .capture('vaadin-progress-bar');
-    });
+  gemini.suite('lumo-variants', suite => {
+    suite
+      .setUrl('lumo-variants.html')
+      .setCaptureElements('#variants')
+      .capture('variants');
   });
 });
