@@ -12,7 +12,6 @@ gemini.suite('vaadin-progress-bar', rootSuite => {
       suite
         .setUrl(`default.html?theme=${theme}`)
         .setCaptureElements('#default-tests')
-        .capture('vaadin-progress-bar')
         .capture('default')
         .capture('rtl', actions => {
           actions.executeJS(window => {
