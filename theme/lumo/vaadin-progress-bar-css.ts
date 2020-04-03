@@ -207,6 +207,8 @@ export const progressBarStyles = css`
   }
 `;
 
+// Safari fails to declare animations for pseudo elements inside a shadow DOM
+// https://bugs.webkit.org/show_bug.cgi?id=186837
 const style = document.createElement('style');
 style.textContent = `
 @keyframes vaadin-progress-pulse3 {
