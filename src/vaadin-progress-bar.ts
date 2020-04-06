@@ -4,15 +4,11 @@ import { ProgressMixin } from './vaadin-progress-mixin';
 
 /**
  * `<vaadin-progress-bar>` is a Web Component for progress bars.
- * Content can be any HTML, including nested `<vaadin-progress-bar`.
  *
  * @csspart part="bar" - Progress-bar's background
  * @csspart part="value" - Progress-bar's foreground
  *
- * See [ThemableMixin – how to apply styles for shadow parts](https://github.com/vaadin/vaadin-themable-mixin/wiki)
- *
  */
-
 @customElement('vaadin-progress-bar')
 export class VaadinProgressBar extends ProgressMixin(ProgressBarBase) {
   static is = 'vaadin-progress-bar';
