@@ -18,7 +18,7 @@
       "importHelpers": true
     },
     "include": [
-      "vaadin-split-layout.ts",
+      "vaadin-progress-bar.ts",
       "src",
       "test",
       "theme",
