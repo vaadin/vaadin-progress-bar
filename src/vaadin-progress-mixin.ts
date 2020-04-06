@@ -13,15 +13,28 @@ export interface ProgressMixinInterface {
 
 export const ProgressMixin = <T extends Constructor<LitElement>>(base: T): T & Constructor<ProgressMixinInterface> => {
   class Progress extends base {
+    /**
+     * Current progress value.
+     */
     @property({ type: Number })
     value: number | null | undefined;
 
+    /**
+     * Minimum bound of the progress bar.
+     */
     @property({ type: Number })
     min = 0;
 
+    /**
+     * Maximum bound of the progress bar.
+     */
     @property({ type: Number })
     max = 1;
 
+    /**
+     * Indeterminate state of the progress bar.
+     * This property takes precedence over other state properties (min, max, value).
+     */
     @property({ type: Boolean, reflect: true })
     indeterminate = false;
 
