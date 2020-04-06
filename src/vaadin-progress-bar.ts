@@ -7,7 +7,6 @@ import { ProgressMixin } from './vaadin-progress-mixin';
  *
  * @csspart part="bar" - Progress-bar's background
  * @csspart part="value" - Progress-bar's foreground
- *
  */
 @customElement('vaadin-progress-bar')
 export class VaadinProgressBar extends ProgressMixin(ProgressBarBase) {
