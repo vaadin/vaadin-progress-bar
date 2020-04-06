@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Progress bar lumo-variants tests</title>
+
+</head>
+
+<body>
+
+  <span id="variants">
+    <vaadin-progress-bar value="0.1" theme="contrast">
+    </vaadin-progress-bar>
+    <vaadin-progress-bar value="1" theme="sucess">
+    </vaadin-progress-bar>
+    <vaadin-progress-bar value="0.1" theme="error">
+    </vaadin-progress-bar>
+  </span>
+
+
+  <script type="module">
+    import '../../theme/lumo/vaadin-progress-bar.js';
+
+    (async() => {
+        (async() => {
+        const progressBar = document.querySelector('vaadin-progress-bar');
+
+        await progressBar.updateComplete;
+  
+        window.requestAnimationFrame(() => {
+          window.webComponentsAreReady = true;
+        });
+      })();
+    })();
+  </script>
+
+</body>
+</html>
