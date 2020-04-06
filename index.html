@@ -23,6 +23,9 @@
   </head>
   <body>
     <api-viewer src="custom-elements.json">
+      <template data-element="vaadin-progress-bar" data-target="host">
+        <vaadin-progress-bar max="100" min="1" value="50"></vaadin-progress-bar>
+      </template>
       <template data-element="vaadin-progress-bar" data-target="knob" data-attr="dir" data-type="select">
         <select>
           <option value=""></option>
