@@ -13,7 +13,7 @@ export class VaadinProgressBar extends ProgressMixin(ProgressBarBase) {
   static is = 'vaadin-progress-bar';
 
   static get version() {
-    return '1.2.0-alpha1';
+    return '2.0.0-alpha1';
   }
 }
 
