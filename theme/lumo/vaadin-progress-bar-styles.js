@@ -1,10 +1,11 @@
-<link rel="import" href="../../../polymer/lib/elements/custom-style.html">
-<link rel="import" href="../../../vaadin-lumo-styles/color.html">
-<link rel="import" href="../../../vaadin-lumo-styles/sizing.html">
-<link rel="import" href="../../../vaadin-lumo-styles/spacing.html">
-<link rel="import" href="../../../vaadin-lumo-styles/style.html">
+import '@polymer/polymer/lib/elements/custom-style.js';
+import '@vaadin/vaadin-lumo-styles/color.js';
+import '@vaadin/vaadin-lumo-styles/sizing.js';
+import '@vaadin/vaadin-lumo-styles/spacing.js';
+import '@vaadin/vaadin-lumo-styles/style.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 
-<dom-module id="lumo-progress-bar" theme-for="vaadin-progress-bar">
+const $_documentContainer = html`<dom-module id="lumo-progress-bar" theme-for="vaadin-progress-bar">
   <template>
     <style>
       :host {
@@ -194,10 +195,7 @@
       }
     </style>
   </template>
-</dom-module>
-
-<!-- Safari fails to declare animations for pseudo elements inside a shadow DOM -->
-<custom-style>
+</dom-module><custom-style>
   <style>
     @keyframes vaadin-progress-pulse3 {
       0% { opacity: 1; }
@@ -210,4 +208,8 @@
       100% { opacity: 1; }
     }
   </style>
-</custom-style>
+</custom-style>`;
+
+document.head.appendChild($_documentContainer.content);
+
+/* Safari fails to declare animations for pseudo elements inside a shadow DOM */
