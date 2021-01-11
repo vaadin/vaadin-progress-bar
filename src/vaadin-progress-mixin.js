@@ -7,7 +7,7 @@
 /**
  * @polymerMixin
  */
-export const ProgressMixin = superClass =>
+export const ProgressMixin = (superClass) =>
   class VaadinProgressMixin extends superClass {
     static get properties() {
       return {
@@ -18,6 +18,7 @@ export const ProgressMixin = superClass =>
           type: Number,
           observer: '_valueChanged'
         },
+
         /**
          * Minimum bound of the progress bar.
          * @type {number}
@@ -27,6 +28,7 @@ export const ProgressMixin = superClass =>
           value: 0,
           observer: '_minChanged'
         },
+
         /**
          * Maximum bound of the progress bar.
          * @type {number}
@@ -36,6 +38,7 @@ export const ProgressMixin = superClass =>
           value: 1,
           observer: '_maxChanged'
         },
+
         /**
          * Indeterminate state of the progress bar.
          * This property takes precedence over other state properties (min, max, value).
@@ -50,9 +53,7 @@ export const ProgressMixin = superClass =>
     }
 
     static get observers() {
-      return [
-        '_normalizedValueChanged(value, min, max)'
-      ];
+      return ['_normalizedValueChanged(value, min, max)'];
     }
 
     /** @protected */
@@ -74,17 +75,17 @@ export const ProgressMixin = superClass =>
     }
 
     /** @private */
-    _valueChanged(newV, oldV) {
+    _valueChanged(newV) {
       this.setAttribute('aria-valuenow', newV);
     }
 
     /** @private */
-    _minChanged(newV, oldV) {
+    _minChanged(newV) {
       this.setAttribute('aria-valuemin', newV);
     }
 
     /** @private */
-    _maxChanged(newV, oldV) {
+    _maxChanged(newV) {
       this.setAttribute('aria-valuemax', newV);
     }
 

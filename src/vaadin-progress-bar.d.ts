@@ -1,8 +1,8 @@
-import {ProgressMixin} from './vaadin-progress-mixin.js';
+import { ProgressMixin } from './vaadin-progress-mixin.js';
 
-import {ThemableMixin} from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
+import { ThemableMixin } from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 
-import {ElementMixin} from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.js';
+import { ElementMixin } from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.js';
 
 /**
  * `<vaadin-progress-bar>` is a Web Component for progress bars.
@@ -35,18 +35,12 @@ import {ElementMixin} from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.js
  * ----------------|-------------|------------
  * `indeterminate` | Set to an indeterminate progress bar | :host
  */
-declare class ProgressBarElement extends
-  ProgressMixin(
-  ThemableMixin(
-  ElementMixin(
-  HTMLElement))) {
-}
+declare class ProgressBarElement extends ProgressMixin(ThemableMixin(ElementMixin(HTMLElement))) {}
 
 declare global {
-
   interface HTMLElementTagNameMap {
-    "vaadin-progress-bar": ProgressBarElement;
+    'vaadin-progress-bar': ProgressBarElement;
   }
 }
 
-export {ProgressBarElement};
+export { ProgressBarElement };

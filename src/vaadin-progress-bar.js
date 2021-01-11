@@ -47,38 +47,38 @@ import { ProgressMixin } from './vaadin-progress-mixin.js';
 class ProgressBarElement extends ElementMixin(ThemableMixin(ProgressMixin(PolymerElement))) {
   static get template() {
     return html`
-    <style>
-      :host {
-        display: block;
-        width: 100%; /* prevent collapsing inside non-stretching column flex */
-        height: 8px;
-      }
+      <style>
+        :host {
+          display: block;
+          width: 100%; /* prevent collapsing inside non-stretching column flex */
+          height: 8px;
+        }
 
-      :host([hidden]) {
-        display: none !important;
-      }
+        :host([hidden]) {
+          display: none !important;
+        }
 
-      [part="bar"] {
-        height: 100%;
-      }
+        [part='bar'] {
+          height: 100%;
+        }
 
-      [part="value"] {
-        height: 100%;
-        transform-origin: 0 50%;
-        transform: scaleX(var(--vaadin-progress-value));
-      }
+        [part='value'] {
+          height: 100%;
+          transform-origin: 0 50%;
+          transform: scaleX(var(--vaadin-progress-value));
+        }
 
-      /* RTL specific styles */
+        /* RTL specific styles */
 
-      :host([dir="rtl"]) [part="value"] {
-        transform-origin: 100% 50%;
-      }
-    </style>
+        :host([dir='rtl']) [part='value'] {
+          transform-origin: 100% 50%;
+        }
+      </style>
 
-    <div part="bar">
-      <div part="value"></div>
-    </div>
-`;
+      <div part="bar">
+        <div part="value"></div>
+      </div>
+    `;
   }
 
   static get is() {
