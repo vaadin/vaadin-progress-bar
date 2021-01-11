@@ -30,5 +30,4 @@ interface ProgressMixin {
    * This property takes precedence over other state properties (min, max, value).
    */
   indeterminate: boolean;
-  ready(): void;
 }

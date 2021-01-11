@@ -40,7 +40,7 @@ import { html } from '@polymer/polymer/lib/utils/html-tag.js';
  * ----------------|-------------|------------
  * `indeterminate` | Set to an indeterminate progress bar | :host
  *
- * @extends PolymerElement
+ * @extends HTMLElement
  * @mixes ProgressMixin
  * @mixes ThemableMixin
  * @mixes ElementMixin

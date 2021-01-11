@@ -1,12 +1,8 @@
-import {PolymerElement} from '@polymer/polymer/polymer-element.js';
-
 import {ProgressMixin} from './vaadin-progress-mixin.js';
 
 import {ThemableMixin} from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 
 import {ElementMixin} from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.js';
-
-import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 
 /**
  * `<vaadin-progress-bar>` is a Web Component for progress bars.
@@ -43,7 +39,7 @@ declare class ProgressBarElement extends
   ProgressMixin(
   ThemableMixin(
   ElementMixin(
-  PolymerElement))) {
+  HTMLElement))) {
 }
 
 declare global {
