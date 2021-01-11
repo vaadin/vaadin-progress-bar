@@ -68,10 +68,6 @@ export const ProgressMixin = (superClass) =>
       const newNormalizedValue = this._normalizeValue(value, min, max);
 
       this.style.setProperty('--vaadin-progress-value', newNormalizedValue);
-
-      this.updateStyles({
-        '--vaadin-progress-value': String(newNormalizedValue)
-      });
     }
 
     /** @private */
