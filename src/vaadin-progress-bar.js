@@ -3,12 +3,11 @@
 Copyright (c) 2017 Vaadin Ltd.
 This program is available under Apache License Version 2.0, available at https://vaadin.com/license/
 */
-import { PolymerElement } from '@polymer/polymer/polymer-element.js';
-
-import { ProgressMixin } from './vaadin-progress-mixin.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { ThemableMixin } from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 import { ElementMixin } from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.js';
-import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import { ProgressMixin } from './vaadin-progress-mixin.js';
+
 /**
  * `<vaadin-progress-bar>` is a Web Component for progress bars.
  *
