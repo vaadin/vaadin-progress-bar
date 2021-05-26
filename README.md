@@ -1,26 +1,22 @@
+# &lt;vaadin-progress-bar&gt;
+
+> ⚠️ Starting from Vaadin 20, the source code and issues for this component are migrated to the [`vaadin/web-components`](https://github.com/vaadin/web-components/tree/master/packages/vaadin-progress-bar) monorepository.
+> This repository contains the source code and releases of `<vaadin-progress-bar>` for the Vaadin versions 10 to 19.
+
+[&lt;vaadin-progress-bar&gt;](https://vaadin.com/components/vaadin-progress-bar) is a progress bar Web Component, part of the [Vaadin components](https://vaadin.com/components).
+
+[Live Demo ↗](https://vaadin.com/components/vaadin-progress-bar/html-examples)
+|
+[API documentation ↗](https://vaadin.com/components/vaadin-progress-bar/html-api)
+
 [![npm version](https://badgen.net/npm/v/@vaadin/vaadin-progress-bar)](https://www.npmjs.com/package/@vaadin/vaadin-progress-bar)
 [![Bower version](https://badgen.net/github/release/vaadin/vaadin-progress-bar)](https://github.com/vaadin/vaadin-progress-bar/releases)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/vaadin/vaadin-progress-bar)
 [![Build Status](https://travis-ci.org/vaadin/vaadin-progress-bar.svg?branch=master)](https://travis-ci.org/vaadin/vaadin-progress-bar)
 [![Coverage Status](https://coveralls.io/repos/github/vaadin/vaadin-progress-bar/badge.svg?branch=master)](https://coveralls.io/github/vaadin/vaadin-progress-bar?branch=master)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/web-components?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 [![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/vaadinvaadin-progress-bar)
 [![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/vaadinvaadin-progress-bar.svg)](https://vaadin.com/directory/component/vaadinvaadin-progress-bar)
-
-# &lt;vaadin-progress-bar&gt;
-
-> ⚠️ 　Starting from Vaadin 20, this project has migrated to [`vaadin-web-components`](https://github.com/vaadin/vaadin-web-components/tree/master/packages/vaadin-progress-bar) *monorepository*.
->
-> This repository is used for Vaadin 14 LTS and Vaadin 19.
-
----
-
-[Live Demo ↗](https://vaadin.com/components/vaadin-progress-bar/html-examples)
-|
-[API documentation ↗](https://vaadin.com/components/vaadin-progress-bar/html-api)
-
-[&lt;vaadin-progress-bar&gt;](https://vaadin.com/components/vaadin-progress-bar) is a progress bar Web Component, part of the [Vaadin components](https://vaadin.com/components).
 
 <!--
 ```
